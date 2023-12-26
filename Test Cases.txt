@@ -1,0 +1,130 @@
+Test Case 1: Basic Scenario
+
+Input:
+- Number of processes (p): 3
+- Number of resources (r): 4
+- Maximum resources for each instance: 5 4 7 3
+- Maximum resource table:
+  
+  7 5 3 2
+  3 2 2 2
+  9 0 2 2
+  
+- Allocated resource table:
+  
+  0 1 0 1
+  2 0 0 0
+  3 0 2 2
+  
+  
+Expected Output:
+- The system should be in a safe state.
+- The safe sequence should be displayed.
+
+### Test Case 2: Unsafe State
+
+Input:
+- Number of processes (p): 3
+- Number of resources (r): 4
+- Maximum resources for each instance: 5 4 7 3
+- Maximum resource table:
+  
+  7 5 3 2
+  3 2 2 2
+  9 0 2 2
+  
+- Allocated resource table:
+  
+  0 1 0 1
+  2 0 0 0
+  5 0 2 2
+  
+  
+Expected Output:
+- The system should be in an unsafe state.
+- An appropriate message should be displayed.
+
+### Test Case 3: Requests within Available Resources
+
+Input:
+- Number of processes (p): 3
+- Number of resources (r): 4
+- Maximum resources for each instance: 5 4 7 3
+- Maximum resource table:
+  
+  7 5 3 2
+  3 2 2 2
+  9 0 2 2
+  
+- Allocated resource table:
+  
+  0 1 0 1
+  2 0 0 0
+  3 0 2 2
+  
+- Additional request for resources:
+  
+  0 0 1 0
+  2 1 0 2
+  0 0 1 0
+  
+  
+Expected Output:
+- The system should be in a safe state after the resource request.
+- The safe sequence should be displayed.
+
+### Test Case 4: Requests exceeding Maximum Claim
+
+Input:
+- Number of processes (p): 3
+- Number of resources (r): 4
+- Maximum resources for each instance: 5 4 7 3
+- Maximum resource table:
+  
+  7 5 3 2
+  3 2 2 2
+  9 0 2 2
+  
+- Allocated resource table:
+  
+  0 1 0 1
+  2 0 0 0
+  3 0 2 2
+  
+- Additional request for resources:
+  
+  0 0 5 0
+  2 1 0 2
+  0 0 1 0
+  
+  
+Expected Output:
+- The system should reject the request as it exceeds the maximum claim.
+- An appropriate message should be displayed.
+
+### Test Case 5: Random Input
+
+Input:
+- Number of processes (p): 4
+- Number of resources (r): 3
+- Maximum resources for each instance: 6 5 4
+- Maximum resource table:
+  
+  4 3 2
+  2 1 0
+  5 4 3
+  3 2 1
+  
+- Allocated resource table:
+  
+  2 1 1
+  1 0 0
+  3 3 2
+  2 1 1
+  
+  
+Expected Output:
+- The system should be in a safe state.
+- The safe sequence should be displayed.
+
+These test cases cover various scenarios, including safe states, unsafe states, resource requests, and invalid requests. Adjust the input parameters and scenarios based on your specific requirements and implementation.
